@@ -1,6 +1,5 @@
 name: Test Runner
 on: push
-
 jobs:
   test-runner:
     name: Test Runner
