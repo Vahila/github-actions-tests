@@ -1,0 +1,10 @@
+name: Test Runner
+on: push
+
+jobs:
+  test-runner:
+    name: Test Runner
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test files running
+        run: echo "Running tests"
