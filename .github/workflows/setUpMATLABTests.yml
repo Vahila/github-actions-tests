@@ -1,5 +1,5 @@
 name: Set up MATLAB integration test cases
-on: push
+on: workflow_dispatch
 jobs:
   Build_fails_when_MATLAB_is_not_setup:
     continue-on-error: true
