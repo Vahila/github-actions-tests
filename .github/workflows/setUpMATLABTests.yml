@@ -1,8 +1,8 @@
 name: Set up MATLAB integration test cases
-on: 
-  workflow_run: 
-    workflows: ["Test Runner"]
-    branches: [main]
+on: workflow_dispatch
+#   workflow_run: 
+#     workflows: ["Test Runner"]
+#     branches: [main]
 jobs:
   Build_fails_when_MATLAB_is_not_setup:
     continue-on-error: true
