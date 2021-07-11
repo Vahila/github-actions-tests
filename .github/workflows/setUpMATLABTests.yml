@@ -10,13 +10,13 @@ jobs:
     name: Build without MATLAB
     runs-on: ubuntu-latest
     steps:
-#       - name: Run command
-#         env:
-#              tag: v0
-#              run-command: matlab-actions/run-command${{env.tag}}
-# #         uses: matlab-actions/run-command@v0
-#         with:
-#           command: version
+      - name: Run command
+        env:
+             tag: v0
+             run-command: matlab-actions/run-command${{env.tag}}
+        uses: ${{env.run-command}}
+        with:
+          command: version
       - name: print
         env:
              tag: v0
