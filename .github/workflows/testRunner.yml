@@ -1,7 +1,5 @@
 name: Test Runner
-on: 
-  workflow_run: 
-    workflows: ["Set up MATLAB integration test cases"]
+on: push
 
 jobs:
   test-runner:
