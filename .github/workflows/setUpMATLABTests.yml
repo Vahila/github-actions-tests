@@ -20,7 +20,7 @@ jobs:
       - name: print
         env:
              tag: v0
-             run-command: matlab-actions/run-command@${{env.tag}}
+             run-command: matlab-actions/run-command@${tag}
         run: |
           echo ${{env.run-command}}
           echo ${{env.tag}}
