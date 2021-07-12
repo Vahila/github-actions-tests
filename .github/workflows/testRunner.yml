@@ -1,10 +1,14 @@
 name: Test Runner
 on: push
-
 jobs:
   test-runner:
+    strategy:
+      matrix:
+        test-files: [setUpMATLAB.yml, runMATLABCommandTests.yml]
     name: Test Runner
     runs-on: ubuntu-latest
     steps:
       - name: Test files running
-        run: echo "Running tests"
+        run: curl --request POST -H "Accept:application/vnd.github.v3+json" --header 'authorization:Bearer ${{ secrets.REST_API_TOKEN }}'  --url "https://api.github.com/repos/Vahila/github-actions-tests/actions/workflows/${{matrix.test-files}}/dispatches"
+         
+
