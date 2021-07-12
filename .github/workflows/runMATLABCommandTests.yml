@@ -1,9 +1,9 @@
 name: Run MATLAB Command integration test cases
-on:
-  workflow_run:
-    workflows: ["Test Runner"]
-    branches: [main]
-    types: [completed]
+on: workflow_dispatch
+#   workflow_run:
+#     workflows: ["Test Runner"]
+#     branches: [main]
+#     types: [completed]
 jobs:
   Build_fails_for_Invalid_command:
     continue-on-error: true
