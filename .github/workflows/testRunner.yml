@@ -4,7 +4,7 @@ jobs:
   test-runner:
     strategy:
       matrix:
-        test-files: [setUpMATLAB.yml, runMATLABCommandTests.yml]
+        test-files: [setUpMATLABTests.yml, runMATLABCommandTests.yml]
     name: Test Runner
     runs-on: ubuntu-latest
     steps:
