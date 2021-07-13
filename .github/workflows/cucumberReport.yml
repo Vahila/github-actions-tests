@@ -15,5 +15,5 @@ jobs:
       - name: Report
         run: |
           ls
-          mvn verify
+          mvn test
           ls
