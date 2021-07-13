@@ -1,7 +1,7 @@
 name: Create Cucumber reports
 on:
   workflow_run:
-    workflows: ["Test Runner"]
+    workflows: ["Run MATLAB Command integration test cases"]
     branches: [main]
     types: [completed]
 jobs:
