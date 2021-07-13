@@ -1,0 +1,34 @@
+name: Run MATLAB Command integration test cases
+on:
+  workflow_run:
+    workflows: ["Test Runner"]
+    branches: [main]
+    types: [completed]
+jobs:
+  Build_fails_for_Invalid_command:
+    continue-on-error: true
+    name: Build with invalid command
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install MATLAB
+        uses: matlab-actions/setup-matlab@v0
+        with:
+          release: R2020b
+      - name: Run invalid command
+        uses: matlab-actions/run-command@v0
+        with:
+          command: versi
+
+  Build_succeeds_for_valid_command:
+    continue-on-error: true
+    name: Build with valid command
+    runs-on: ubuntu-latest
+      steps:
+        - name: Install MATLAB
+          uses: matlab-actions/setup-matlab@v0
+          with:
+            release: R2020b
+        - name: Run valid command
+          uses: matlab-actions/run-command@v0
+          with:
+            command: version

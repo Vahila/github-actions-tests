@@ -1,0 +1,17 @@
+name: Create Cucumber reports
+on:
+  workflow_run:
+    workflows: ["Run MATLAB Command integration test cases"]
+    branches: [main]
+    types: [completed]
+jobs:
+  Generate_cucumber_reports:
+    continue-on-error: true
+    name: Generate cucumber report
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+      - name: Report
+        run:
+          mvn verify
