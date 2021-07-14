@@ -11,10 +11,11 @@ Feature: MATLAB Actions features
   Scenario Outline:  Check for job status and message in logs
     When The test YML"<file>" is run
     Then Build status of "<job>" is "<status>"
+    And Build log has "<message>"
     Examples:
-      | file | job | status |
-      | setUpMATLABTests.yml | Build without MATLAB | failure |
-      | runMATLABCommandTests.yml | Build with invalid command | failure |
+      | file | job | status | message |
+      | setUpMATLABTests.yml | Build without MATLAB | failure | 'matlab' command not found |
+      | runMATLABCommandTests.yml | Build with invalid command | failure | Unrecognized function or variable |
 
   Scenario Outline:  Check for job status
     When The test YML"<file>" is run

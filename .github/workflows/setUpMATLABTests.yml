@@ -23,8 +23,4 @@ jobs:
       - name: Install MATLAB
         uses: matlab-actions/setup-matlab@v0
         with:
-<<<<<<< HEAD
           release: R2020b
-=======
-          release: R2020b
->>>>>>> acad1b73a4fa7351e1ca83d39fe7dc67e20131ac

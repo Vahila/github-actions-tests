@@ -22,6 +22,8 @@ public class StepDef {
 
         // Rest assured util to add header
         responseUtils = new ResponseUtils();
+        String token = System.getProperty("token");
+        responseUtils.addHeader("Authorization", "Basic "+token);
 
         // Using the Util  for running the REST APIs
         actionRestAPIUtils = new ActionRestAPIUtils();
