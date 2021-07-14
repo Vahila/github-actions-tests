@@ -1,9 +1,15 @@
 name: Create Cucumber reports
-on:
-  workflow_run:
-    workflows: ["Run MATLAB Command integration test cases"]
-    branches: [main]
-    types: [completed]
+on: 
+  workflow_dispatch:
+    inputs:
+      token:
+        description: 'Token to get logs'     
+        required: true
+
+#   workflow_run:
+#     workflows: ["Run MATLAB Command integration test cases"]
+#     branches: [main]
+#     types: [completed]
 jobs:
   Generate_cucumber_reports:
     continue-on-error: true
@@ -15,7 +21,7 @@ jobs:
       - name: Report
         run: |
           ls
-          mvn test
+          mvn test -Dtoken=${{ github.event.inputs.token }}
           ls
       - name: Upload report
         uses: actions/upload-artifact@v2
