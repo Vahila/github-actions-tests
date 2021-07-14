@@ -13,5 +13,12 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v2
       - name: Report
-        run:
-          mvn verify
+        run: |
+          ls
+          mvn test
+          ls
+      - name: Upload report
+        uses: actions/upload-artifact@v2
+        with:
+          name: cucumberReport
+          path: cucumber.html

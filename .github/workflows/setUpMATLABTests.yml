@@ -1,5 +1,5 @@
 name: Set up MATLAB integration test cases
-on:
+on: 
   workflow_run:
     workflows: ["Test Runner"]
     branches: [main]
